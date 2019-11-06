@@ -8,10 +8,7 @@ const gravatar = require('gravatar');
 // Public
 router.post('/', async (req, res) => {
   console.log(req.body);
-  res.send('user route');
-
   const { firstName, lastName, email, password } = req.body;
-
   let user = await User.findOne({ email });
 
   if (user) {
