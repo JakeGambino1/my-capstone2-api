@@ -1,0 +1,28 @@
+{
+  "name": "my-capstone2-api",
+  "version": "1.0.0",
+  "description": "dCC capstone project API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakeGambino1/my-capstone2-api.git"
+  },
+  "author": "Jake Gambino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JakeGambino1/my-capstone2-api/issues"
+  },
+  "homepage": "https://github.com/JakeGambino1/my-capstone2-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "gravatar": "^1.8.0",
+    "mongoose": "^5.7.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
