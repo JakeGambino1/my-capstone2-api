@@ -22,13 +22,16 @@ const UserSchema = new mongoose.Schema({
     type: String
   },
   isMentor: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
   isAdmin: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
-  requestsMentorship: {
-    type: Boolean
+  requestToBeMentor: {
+    type: Boolean,
+    default: false
   },
   date: {
     type: Date,

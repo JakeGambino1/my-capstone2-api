@@ -1,11 +1,38 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../schema/User');
+const gravatar = require('gravatar');
 
-// GET api/users
-// Put new user into DB
+// Post api/users
+// Register new user
 // Public
-router.get('/', (req, res) => {
+router.post('/', async (req, res) => {
+  console.log(req.body);
   res.send('user route');
+
+  const { firstName, lastName, email, password } = req.body;
+
+  let user = await User.findOne({ email });
+
+  if (user) {
+    console.log('User exists');
+  }
+
+  const avatar = gravatar.url(email, {
+    s: '200',
+    r: 'pg',
+    d: 'mm'
+  });
+
+  user = new User({
+    firstName,
+    lastName,
+    email,
+    password,
+    avatar: avatar
+  });
+
+  await user.save();
 });
 
 module.exports = router;
