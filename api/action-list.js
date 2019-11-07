@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
   res.json(actionItem);
 });
 
-// GET api/action-list | get all action list items | private
+// GET api/action-list | get all action list items
 router.get('/', async (req, res) => {
   const actionList = await ActionList.find().sort({ date: -1 });
   res.json(actionList);

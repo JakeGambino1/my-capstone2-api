@@ -18,3 +18,4 @@ app.get('/', (req, res) => {
 
 app.use('/api/users', require('./api/users'));
 app.use('/api/posts', require('./api/posts'));
+app.use('/api/action-list', require('./api/action-list'));
