@@ -16,7 +16,8 @@ router.post('/', async (req, res) => {
     interests,
     bio,
     youtube,
-    linkedin
+    linkedin,
+    isAdmin
   } = req.body;
   let user = await User.findOne({ email });
 
@@ -39,14 +40,19 @@ router.post('/', async (req, res) => {
     interests,
     bio,
     youtube,
-    linkedin
+    linkedin,
+    isAdmin
   });
 
   await user.save();
+  res.json(user);
 });
 
+// GET api/users
+// get all users
 router.get('/', async (req, res) => {
-  console.log(req.body);
+  const user = await User.find().sort({ date: -1 });
+  res.json(user);
 });
 
 module.exports = router;
