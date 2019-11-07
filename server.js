@@ -16,6 +16,13 @@ app.get('/', (req, res) => {
   res.send('API running');
 });
 
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
 app.use('/api/users', require('./api/users'));
 app.use('/api/posts', require('./api/posts'));
 app.use('/api/action-list', require('./api/action-list'));
