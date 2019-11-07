@@ -21,6 +21,19 @@ const UserSchema = new mongoose.Schema({
   avatar: {
     type: String
   },
+  interests: {
+    type: [String],
+    required: true
+  },
+  bio: {
+    type: String
+  },
+  youtube: {
+    type: String
+  },
+  linkedin: {
+    type: String
+  },
   isMentor: {
     type: Boolean,
     default: false

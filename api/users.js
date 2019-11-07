@@ -8,7 +8,16 @@ const gravatar = require('gravatar');
 // Public
 router.post('/', async (req, res) => {
   console.log(req.body);
-  const { firstName, lastName, email, password } = req.body;
+  const {
+    firstName,
+    lastName,
+    email,
+    password,
+    interests,
+    bio,
+    youtube,
+    linkedin
+  } = req.body;
   let user = await User.findOne({ email });
 
   if (user) {
@@ -26,10 +35,18 @@ router.post('/', async (req, res) => {
     lastName,
     email,
     password,
-    avatar: avatar
+    avatar: avatar,
+    interests,
+    bio,
+    youtube,
+    linkedin
   });
 
   await user.save();
+});
+
+router.get('/', async (req, res) => {
+  console.log(req.body);
 });
 
 module.exports = router;
