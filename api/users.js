@@ -70,6 +70,8 @@ router.put('/:id', async (req, res) => {
   if (req.body.firstName) user.firstName = req.body.firstName;
   if (req.body.lastName) user.lastName = req.body.firstName;
   if (req.body.isMentor) user.isMentor = req.body.isMentor;
+  if (req.body.requestToBeMentor)
+    user.requestToBeMentor = req.body.requestToBeMentor;
   if (req.body.youtube) user.youtube = req.body.youtube;
   if (req.body.linkedin) user.linkedin = req.body.linkedin;
   if (req.body.intersts) user.interest = req.body.interests;
