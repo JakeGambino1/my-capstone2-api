@@ -55,4 +55,11 @@ router.get('/', async (req, res) => {
   res.json(user);
 });
 
+// GET api/users/:id
+// get user by id
+router.get('/:id', async (req, res) => {
+  const user = await User.findById(req.params.id);
+  res.json(user);
+});
+
 module.exports = router;
