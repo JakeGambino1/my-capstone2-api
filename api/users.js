@@ -62,4 +62,21 @@ router.get('/:id', async (req, res) => {
   res.json(user);
 });
 
+// PUT api/users/:id
+// update user by id
+router.put('/:id', async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  if (req.body.firstName) user.firstName = req.body.firstName;
+  if (req.body.lastName) user.lastName = req.body.firstName;
+  if (req.body.isMentor) user.isMentor = req.body.isMentor;
+  if (req.body.youtube) user.youtube = req.body.youtube;
+  if (req.body.linkedin) user.linkedin = req.body.linkedin;
+  if (req.body.intersts) user.interest = req.body.interests;
+  if (req.body.bio) user.bio = req.body.bio;
+
+  await user.save();
+  res.json(user);
+});
+
 module.exports = router;
