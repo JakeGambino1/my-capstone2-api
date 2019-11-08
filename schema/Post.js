@@ -26,6 +26,10 @@ const PostSchema = new mongoose.Schema({
   date: {
     type: String,
     default: Date.now
+  },
+  isNewPost: {
+    type: Boolean,
+    default: false
   }
 });
 

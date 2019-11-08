@@ -7,6 +7,7 @@ const Post = require('../schema/Post');
 router.post('/', async (req, res) => {
   // const user = await User.findById(req.body.id).select('-password');
   const newPost = new Post({
+    isNewPost: true,
     user: req.body.user,
     title: req.body.title,
     content: req.body.content
