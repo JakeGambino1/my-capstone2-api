@@ -89,4 +89,18 @@ router.put('/unlike/:id', async (req, res) => {
   res.status(500).json('Server Error');
 });
 
+// PUT api/posts/:id
+// Remove "new" marking
+router.put('/:id', async (req, res) => {
+  const post = await Post.findById(req.params.id);
+
+  if (!post) {
+    return res.status(404).json({ msg: 'Action Item not found' });
+  }
+
+  post.isNewPost = false;
+  await post.save();
+  res.json(post);
+});
+
 module.exports = router;
