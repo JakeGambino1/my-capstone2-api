@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/JakeGambino1/my-capstone2-api#readme",
   "dependencies": {
-    "config": "^3.2.4",
+    "config": "^3.3.8",
     "express": "^4.17.1",
     "gravatar": "^1.8.0",
     "mongoose": "^5.7.8"
